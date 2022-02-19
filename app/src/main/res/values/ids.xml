@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="statisticsFragment_viewSettings_byyear" type="id">
+        statisticsFragment_viewSettings_byyear
+    </item>
+    <item name="statisticsFragment_viewStatistics_byDays_textView" type="id">
+        statisticsFragment_viewStatistics_byDays_textView
+    </item>
+    <item name="statisticsFragment_viewStatistics_byDays_value" type="id">
+        statisticsFragment_viewStatistics_byDays_value
+    </item>
+</resources>

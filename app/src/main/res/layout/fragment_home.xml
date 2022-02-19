@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F202073A"
+        android:orientation="vertical"
+        android:id="@+id/constraintLayout">
+
+    <LinearLayout
+        android:id="@+id/homefragment_timersettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="fill_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginVertical="5dp">
+
+            <TextView
+                android:id="@+id/homefragment_timersettings_repeat_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_homefragment_timersettings_bg"
+                android:fontFamily="@font/lobster"
+                android:paddingHorizontal="30dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/repeat"
+                android:textAlignment="center"
+                android:textColor="#F702073A"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/homefragment_timersettings_repeat_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/homefragment_timersettings_repeat_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:fontFamily="@font/lobster"
+                android:hint="@string/input_times"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textColor="#F3F6C0DC"
+                android:textColorHint="#88FAF9F9"
+                android:textSize="25sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/homefragment_timersettings_restTime_textView_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_homefragment_timersettings_bg"
+
+                android:fontFamily="@font/lobster"
+                android:paddingHorizontal="25dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="@string/rest_time"
+                android:textAlignment="center"
+                android:textColor="#F702073A"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/homefragment_timersettings_restTime_textView_title"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/homefragment_timersettings_restTime_editText_minutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/lobster"
+                    android:hint="@string/timerValue_default"
+                    android:inputType="time"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textColor="#F3F6C0DC"
+                    android:textColorHint="#88FAF9F9"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/homefragment_timersettings_restTime_textView_timeSeparators"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/homefragment_timersettings_restTime_editText_minutes"
+                    android:fontFamily="@font/lobster"
+                    android:padding="5dp"
+                    android:text="@string/time_separators"
+                    android:textAlignment="center"
+                    android:textColor="#f2b5d4"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/homefragment_timersettings_restTime_editText_seconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/homefragment_timersettings_restTime_textView_timeSeparators"
+                    android:fontFamily="@font/lobster"
+                    android:hint="@string/timerValue_default"
+                    android:inputType="time"
+                    android:padding="5dp"
+                    android:textAlignment="center"
+                    android:textColor="#F3F6C0DC"
+                    android:textColorHint="#88FAF9F9"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/homefragment_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homefragment_timersettings"
+        app:layout_constraintVertical_bias="0.096"
+        tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/homefragment_timer_editText_minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="numberDecimal"
+            android:text="@string/timerValue_default"
+            android:textAlignment="center"
+            android:textColor="#F3B7D6"
+            android:textSize="125sp" />
+
+        <TextView
+            android:id="@+id/homefragment_timer_textView_timeSeparators"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/homefragment_timer_editText_minutes"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/time_separators"
+            android:textColor="#F3B7D6"
+            android:textSize="125sp" />
+
+        <EditText
+            android:id="@+id/homefragment_timer_editText_seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="-3dp"
+            android:layout_toEndOf="@+id/homefragment_timer_textView_timeSeparators"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="numberDecimal"
+            android:text="@string/timerValue_default"
+            android:textAlignment="center"
+            android:textColor="#F3B7D6"
+            android:textSize="125sp" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/homefragment_timer_imageButton_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@null"
+        android:onClick="button_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homefragment_timer"
+        app:layout_constraintVertical_bias="0.324"
+        app:srcCompat="@drawable/ic_homefragment_play" />
+
+    <ImageButton
+        android:id="@+id/homefragment_timer_imageButton_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="100dp"
+        android:background="@null"
+        android:visibility="gone"
+        android:onClick="button_stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/homefragment_timer_imageButton_pause"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_homefragment_stop" />
+
+    <ImageButton
+        android:id="@+id/homefragment_timer_imageButton_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="100dp"
+        android:background="@null"
+        android:visibility="gone"
+        android:onClick="button_pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_homefragment_pause" />
+
+    <ImageButton
+        android:id="@+id/homefragment_timer_imageButton_resume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="100dp"
+        android:background="@null"
+        android:onClick="button_resume"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/homefragment_timer_imageButton_stop"
+        app:srcCompat="@drawable/ic_homefragment_resume" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
